@@ -40,16 +40,20 @@ $(document).ready(function() {
                 }).done(function(response) {
                     var getGif = response.data[i].images.downsized_still.url;
                     var rating = response.data[i].rating;
+                    var contain = $("<div>");
                     var displayRating = $("<p>");
                     var displayGif = $('<img>');
+                    contain.attr("id", "gif-" + i);
+                    contain.addClass("gif-holder");
                     displayRating.text("Rating: " + rating);
                     displayGif.attr("src", getGif);
                     displayGif.addClass("newGif");
                     displayGif.attr("data-state", "still");
                     displayGif.attr("data-animate", response.data[i].images.downsized.url);
                     displayGif.attr("data-still", response.data[i].images.downsized_still.url);
-                    $("#gifs").append(displayRating);
-                    $("#gifs").append(displayGif);
+                    $("#gifs").append(contain);
+                    $("#gif-" + i).append(displayRating);
+                    $("#gif-" + i).append(displayGif);
                 });
             })(i);
         }

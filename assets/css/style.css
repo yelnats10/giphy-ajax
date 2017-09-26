@@ -2,8 +2,30 @@
 	background-color: green;
 	margin-right: 10px;
 	padding: 10px;
-	font-size: 16px;
+	font-size: 24px;
 	font-weight: bold;
-
 }
 
+.gif-holder {
+	float: left;
+	margin: 0 20px;
+	
+}
+
+#gifs {
+	width: 60%;
+}
+
+#search-container {
+	float: right;
+}
+
+#search,
+#search-button {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#buttons {
+	width: 60%;
+}
