@@ -1,11 +1,13 @@
 $(document).ready(function() {
     console.log("ready!");
 
-    var topics = ["dog", "cat", "rabbit"];
+//creating variables to be used when performing searches and creating buttons
+    var topics = ["dog", "cat", "rabbit"];  //an array to store user inputs
     var limit = 10;
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=";
     var apiKey = "&api_key=mUwe1Y3S6MMjW2SgOevoKu1X0uNVeEhR&limit=" + limit;
 
+//function used to create buttons to load gifs
     function createButtons() {
         for (var i = 0; i < topics.length; i++) {
             var makeButton = $("<button type='button'>" + topics[i] + "</button>");
@@ -16,9 +18,9 @@ $(document).ready(function() {
 
     createButtons();
 
+//after the user inputs what they would like to search this will create that button
     $("#search-button").on("click", function(event) {
         event.preventDefault();
-
         var grabSearch = $("#search").val().trim();
         topics.push(grabSearch);
         $("#search").val("");
@@ -26,6 +28,7 @@ $(document).ready(function() {
         createButtons();
     });
 
+//This section will perform the actual search within the giphy api when a button is pressed and load 10 gifs
     $("#buttons").on("click", ".gif-button", function() {
         var search = ($(this).text()); //grabs text of button to search
         console.log(search);
@@ -59,6 +62,7 @@ $(document).ready(function() {
         }
     });
 
+//This section is used to start and stop the gif animation.
     $("#gifs").on("click", ".newGif", function() {
         var state = $(this).attr("data-state");
         if (state === "still") {
