@@ -4,6 +4,13 @@
 	padding: 10px;
 	font-size: 24px;
 	font-weight: bold;
+	border: black;
+}
+
+p {
+	font-weight: bold;
+	font-size: 18px;
+	color: red;
 }
 
 .gif-holder {
@@ -13,7 +20,8 @@
 }
 
 #gifs {
-	width: 60%;
+	width: 65%;
+	margin-top: 50px;
 }
 
 #search-container {
@@ -28,4 +36,12 @@
 
 #buttons {
 	width: 60%;
+}
+
+img {
+	width: 200px;
+}
+
+body {
+background: linear-gradient(90deg, blue, green); 
 }
